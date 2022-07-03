@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Bmi from './Route/Bmi';
+import Home from './Route/home';
+import Shopping from './Route/Shopping';
+import Showcase from './Route/imggallery';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />}>
+          <Route path="bmi" element={<Bmi />} />
+          <Route path="showcase" element={<Showcase />} />
+          <Route path="shopping" element={<Shopping />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
-
-export default App;
